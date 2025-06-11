@@ -61,7 +61,7 @@ $result = mysqli_query($conn, $sql);
 <body>
 <header class="header">
     <section class="flex">
-        <a href="a_beranda.php" class="logo">SauDarah Universitas Mataram</a>
+        <span class="logo">SauDarah Universitas Mataram</span>
         <div class="icons">
             <div id="user-btn" class="fas fa-user"></div>
             <a href="a_masuk.php"><div class="fas fa-right-from-bracket"></div></a>
@@ -92,15 +92,12 @@ $result = mysqli_query($conn, $sql);
         <p class="role"><?php echo $email; ?></p>
     </div>
     <nav class="navbar">
-        <a href="a_beranda.php"><i class="fas fa-home"></i><span>Beranda</span></a>
-        <a href="a_informasi.php"><i class="fas fa-info-circle"></i><span>Tentang</span></a>
         <a href="a_lihat_jadwal.php"><i class="fas fa-calendar-alt"></i><span>Jadwal Donor</span></a>
         <a href="a_lihat_pendaftaran_jadwal.php"><i class="fas fa-clipboard-list"></i><span>Pendaftaran</span></a>
         <a href="a_lihat_pendonor.php"><i class="fas fa-user-friends"></i><span>Pendonor</span></a>
         <a href="a_menu_input_donor.php"><i class="fas fa-notes-medical"></i><span>Data Donor</span></a>
         <a href="a_kelola_forum.php"><i class="fas fa-comments"></i><span>Kelola Forum</span></a>
         <a href="a_kelola_riwayat.php"><i class="fas fa-history"></i><span>Riwayat</span></a>
-        <a href="a_tentang_kami.php"><i class="fas fa-users"></i><span>Tentang Kami</span></a>
     </nav>
 </div>
 
@@ -142,7 +139,7 @@ $result = mysqli_query($conn, $sql);
         echo "</table>";
         echo "<div style='margin-top: 10px;'> <a href='a_kelola_riwayat.php?hapus_semua=1' class='delete-btn' onclick=\"return confirm('Yakin ingin menghapus semua riwayat donor?')\">Hapus Semua</a> </div>";
     } else {
-        echo "<p>Tidak ada data riwayat ditemukan.</p>";
+        echo "<p><br>Tidak ada data riwayat ditemukan.</p>";
     }
 
     mysqli_close($conn);

@@ -5,12 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Form Masuk</title>
-
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body class="sign-in">
     <div class="container">
+        <!-- Tambahkan gambar/logo di atas form -->
+        <div style="text-align: center; margin-bottom: 2px;">
+            <img src="img/logopmi.png" width="80" alt="Logo PMI" />
+        </div>
         <div class="login form">
             <header>Masuk sebagai Admin</header>
             <?php
@@ -34,13 +37,12 @@
                 $result = $conn->query($sql);
 
                 if ($result->num_rows > 0) {
-                    // Data masuk benar, set session dan arahkan ke beranda
                     $row = $result->fetch_assoc();
                     $_SESSION['email_admin'] = $email;
                     $_SESSION['nama_admin'] = $row['nama_admin'];
                     $_SESSION['foto_admin'] = $row['foto_admin'];
                     $_SESSION['id_admin'] = $row['id_admin'];
-                    header("Location: a_beranda.php");
+                    header("Location: a_lihat_jadwal.php");
                     exit();
                 } else {
                     header("Location: a_masuk.php");
